@@ -78,9 +78,7 @@ body::before {
   z-index: 0;
 }
 
-/* ==========================================
-   DISCORD MODAL POPUP TASARIMI (Kesin Açılma Ayarlı)
-   ========================================== */
+/* DISCORD MODAL POPUP TASARIMI */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -236,4 +234,32 @@ body::before {
 
 .btn-submit:hover {
   background-color: #4752c4;
+}
+
+/* ==========================================
+   BİLDİRİM BARI (SUCCESS TOAST)
+   ========================================== */
+.toast-notification {
+  visibility: hidden;
+  min-width: 300px;
+  background-color: #23a55a; /* Yeşil Onay Rengi */
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 100000;
+  top: 30px;
+  right: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s, top 0.4s;
+}
+
+.toast-notification.show {
+  visibility: visible;
+  opacity: 1;
+  top: 30px;
 }
