@@ -29,75 +29,14 @@
     <p>Deneme Rehber - EvrenXR</p>
   </div>
 
-  <!-- ⚖️ CEZA İTİRAZ FORMU -->
-  <div class="card form-card">
-    <h2>⚖️ Ceza İtiraz Formu</h2>
-    <div class="warning-box">
-      ⚠️ Bu form yetkililere gönderilecek. Şifrelerini ya da diğer hassas bilgilerini paylaşmadığından emin ol.
+  <!-- ⚖️ CEZA İTİRAZ VE DESTEK BUTONLARI -->
+  <div class="card">
+    <h2>🛠️ Oyuncu İşlemleri</h2>
+    <p>Aşağıdaki butonlara tıklayarak cezanıza itiraz edebilir veya destek talebi oluşturabilirsiniz.</p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+      <button class="btn" onclick="openModal('cezaModal')">⚖️ Ceza İtiraz Formu</button>
+      <button class="btn" onclick="openModal('destekModal')">📩 Destek Talebi</button>
     </div>
-
-    <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
-      <!-- İkinci mail adresi (CC) ve Ayarlar -->
-      <input type="hidden" name="_cc" value="yislamm009@gmail.com">
-      <input type="hidden" name="_subject" value="YKZone - Yeni Ceza İtirazı!">
-      <input type="hidden" name="_captcha" value="false">
-
-      <div class="form-group">
-        <label>Cezanın alındığı sunucu <span class="required">*</span></label>
-        <input type="text" name="Sunucu" value="BoxPvP" readonly>
-      </div>
-
-      <div class="form-group">
-        <label>Ceza tarihi <span class="required">*</span></label>
-        <input type="date" id="cezaTarihi" name="Ceza_Tarihi" required>
-      </div>
-
-      <div class="form-group">
-        <label>Ceza ID'niz <span class="required">*</span></label>
-        <input type="text" name="Ceza_ID" placeholder="12345" required>
-      </div>
-
-      <div class="form-group">
-        <label>İtiraz nedeniniz <span class="required">*</span></label>
-        <textarea name="Itiraz_Nedeni" placeholder="Neden ceza aldığınızı ve itiraz gerekçenizi açıklayın..." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Discord kullanıcı adınız veya discord kullanıcı id'niz <span class="required">*</span></label>
-        <input type="text" name="Discord_Kullanici" placeholder="Örn: yusufking veya 123456789012345678" required>
-      </div>
-
-      <button type="submit" class="btn btn-submit">Formu Gönder</button>
-    </form>
-  </div>
-
-  <!-- 📩 DESTEK TALEBİ FORMU -->
-  <div class="card form-card">
-    <h2>📩 Destek Talebi</h2>
-
-    <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
-      <!-- İkinci mail adresi (CC) ve Ayarlar -->
-      <input type="hidden" name="_cc" value="yislamm009@gmail.com">
-      <input type="hidden" name="_subject" value="YKZone - Yeni Destek Talebi!">
-      <input type="hidden" name="_captcha" value="false">
-
-      <div class="form-group">
-        <label>Destek Başlığı <span class="required">*</span></label>
-        <input type="text" name="Destek_Basligi" placeholder="Örn: Market Sorunu, VIP Bilgi..." required>
-      </div>
-
-      <div class="form-group">
-        <label>Destek Sebebi <span class="required">*</span></label>
-        <textarea name="Destek_Sebebi" placeholder="Lütfen yaşadığınız sorunu veya talebinizi detaylıca açıklayın..." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Discord kullanıcı adınız veya discord kullanıcı id'niz <span class="required">*</span></label>
-        <input type="text" name="Discord_Kullanici" placeholder="Örn: yusufking veya 123456789012345678" required>
-      </div>
-
-      <button type="submit" class="btn btn-submit">Destek Talebi Gönder</button>
-    </form>
   </div>
 
   <div class="card">
@@ -108,6 +47,92 @@
   <footer>
     <p>© 2026 YKZone. Tüm hakları saklıdır.</p>
   </footer>
+
+  <!-- ⚖️ CEZA İTİRAZ MODAL PENCERESİ (Görseldeki Tasarım) -->
+  <div id="cezaModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>⚖️ Ceza İtiraz Formu</h3>
+        <span class="close-btn" onclick="closeModal('cezaModal')">&times;</span>
+      </div>
+      
+      <div class="warning-box">
+        ⚠️ Bu form <strong>YKZone</strong> uygulamasına gönderilecek. Şifrelerini ya da diğer hassas bilgilerini paylaşmadığından emin ol.
+      </div>
+
+      <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
+        <input type="hidden" name="_cc" value="yislamm009@gmail.com">
+        <input type="hidden" name="_subject" value="YKZone - Ceza İtirazı">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-group">
+          <label>Cezanın alındığı sunucu <span class="required">*</span></label>
+          <input type="text" name="Sunucu" value="BoxPvP" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>Ceza tarihi <span class="required">*</span></label>
+          <input type="date" id="cezaTarihi" name="Ceza_Tarihi" required>
+        </div>
+
+        <div class="form-group">
+          <label>Ceza ID'niz <span class="required">*</span></label>
+          <input type="text" name="Ceza_ID" placeholder="12345" required>
+        </div>
+
+        <div class="form-group">
+          <label>İtiraz nedeniniz <span class="required">*</span></label>
+          <textarea name="Itiraz_Nedeni" placeholder="Neden ceza aldığınızı ve itiraz gerekçenizi açıklayın..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Discord kullanıcı adınız veya discord kullanıcı id'niz <span class="required">*</span></label>
+          <input type="text" name="Discord_Kullanici" placeholder="Oyuncu1" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="closeModal('cezaModal')">İptal</button>
+          <button type="submit" class="btn-submit">Gönder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 📩 DESTEK TALEBİ MODAL PENCERESİ -->
+  <div id="destekModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>📩 Destek Talebi</h3>
+        <span class="close-btn" onclick="closeModal('destekModal')">&times;</span>
+      </div>
+
+      <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
+        <input type="hidden" name="_cc" value="yislamm009@gmail.com">
+        <input type="hidden" name="_subject" value="YKZone - Destek Talebi">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-group">
+          <label>Destek Başlığı <span class="required">*</span></label>
+          <input type="text" name="Destek_Basligi" placeholder="Destek Başlığı" required>
+        </div>
+
+        <div class="form-group">
+          <label>Destek Sebebi <span class="required">*</span></label>
+          <textarea name="Destek_Sebebi" placeholder="Destek Sebebi" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Discord kullanıcı adınız veya discord kullanıcı id'niz <span class="required">*</span></label>
+          <input type="text" name="Discord_Kullanici" placeholder="Oyuncu1" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="closeModal('destekModal')">İptal</button>
+          <button type="submit" class="btn-submit">Gönder</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
