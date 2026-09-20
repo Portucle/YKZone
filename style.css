@@ -37,12 +37,14 @@ h1 {
 
 .btn {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 12px 24px;
   background: #5865F2;
   color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  font-family: inherit;
+  font-size: 15px;
   transition: 0.3s;
   border: none;
   cursor: pointer;
@@ -51,74 +53,6 @@ h1 {
 .btn:hover {
   background: #404EED;
   box-shadow: 0 0 15px #5865F2;
-}
-
-/* Form Tasarımları */
-.form-card {
-  text-align: left;
-}
-
-.form-card h2 {
-  text-align: center;
-  margin-top: 0;
-}
-
-.warning-box {
-  background: rgba(255, 165, 0, 0.15);
-  border: 1px solid #ffa500;
-  color: #ffcc00;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 0.9em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-size: 0.9em;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #dddddd;
-}
-
-.form-group .required {
-  color: #ff4d4d;
-}
-
-.form-group input,
-.form-group textarea {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 0.95em;
-  font-family: 'Poppins', sans-serif;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: cyan;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 90px;
-}
-
-.btn-submit {
-  width: 100%;
-  margin-top: 10px;
-  font-size: 1em;
 }
 
 footer {
@@ -142,4 +76,164 @@ body::before {
   left: var(--x, 50%);
   transition: 0.05s;
   z-index: 0;
+}
+
+/* ==========================================
+   DISCORD MODAL POPUP TASARIMI (Birebir Uyumlu)
+   ========================================== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #313338;
+  width: 90%;
+  max-width: 460px;
+  border-radius: 8px;
+  padding: 20px 20px 0 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  color: #dbdee1;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #f2f3f5;
+  font-weight: 700;
+}
+
+.close-btn {
+  color: #b5bac1;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+/* Uyarı Kutusu */
+.warning-box {
+  background-color: #2b2d31;
+  border: 1px solid #b8860b;
+  color: #f3d179;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Form Elemanları */
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: #b5bac1;
+}
+
+.form-group .required {
+  color: #f23f42;
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: #1e1f22;
+  border: 1px solid #1e1f22;
+  color: #dbdee1;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #5865f2;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Modal Alt Buton Alanı */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #2b2d31;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 16px 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-cancel:hover {
+  text-decoration: underline;
+}
+
+.btn-submit {
+  background-color: #5865f2;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #4752c4;
 }
