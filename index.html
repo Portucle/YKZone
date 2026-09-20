@@ -11,6 +11,9 @@
     <source src="minecraft.mp4" type="video/mp4">
   </video>
 
+  <!-- BİLDİRİM BARI (Başarılı Mesajı İçin) -->
+  <div id="toastNotification" class="toast-notification"></div>
+
   <div class="card">
     <h1>⚔️ YKZone ⚔️</h1>
     <p>Minecraft'ın en iyi BoxPvP sunucusu olmaya geliyoruz!</p>
@@ -60,7 +63,8 @@
         ⚠️ Bu form <strong>YKZone</strong> uygulamasına gönderilecek. Şifrelerini ya da diğer hassas bilgilerini paylaşmadığından emin ol.
       </div>
 
-      <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
+      <!-- FormSubmit AJAX Adresi (Sayfa yönlendirmesi yapmaz) -->
+      <form id="cezaForm" action="https://formsubmit.co/ajax/portucle88@gmail.com" method="POST">
         <input type="hidden" name="_cc" value="yislamm009@gmail.com">
         <input type="hidden" name="_subject" value="YKZone - Ceza İtirazı">
         <input type="hidden" name="_captcha" value="false">
@@ -106,7 +110,7 @@
         <span class="close-btn" onclick="closeModal('destekModal')">&times;</span>
       </div>
 
-      <form action="https://formsubmit.co/portucle88@gmail.com" method="POST">
+      <form id="destekForm" action="https://formsubmit.co/ajax/portucle88@gmail.com" method="POST">
         <input type="hidden" name="_cc" value="yislamm009@gmail.com">
         <input type="hidden" name="_subject" value="YKZone - Destek Talebi">
         <input type="hidden" name="_captcha" value="false">
