@@ -17,18 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Modal Açma / Kapama Fonksiyonları
-function openModal(id) {
-  document.getElementById(id).classList.add('active');
-}
+// Modal Açma Fonksiyonu (Global)
+window.openModal = function(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('active');
+  }
+};
 
-function closeModal(id) {
-  document.getElementById(id).classList.remove('active');
-}
+// Modal Kapama Fonksiyonu (Global)
+window.closeModal = function(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('active');
+  }
+};
 
-// Modal dışına tıklayınca otomatik kapatma
-window.onclick = function(event) {
+// Arka plana tıklayınca kapatma
+window.addEventListener('click', function(event) {
   if (event.target.classList.contains('modal-overlay')) {
     event.target.classList.remove('active');
   }
-};
+});
